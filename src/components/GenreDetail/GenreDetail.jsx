@@ -9,23 +9,23 @@ import rock from '../../assets/images/genre-rock.png';
 function GenreDetail({ genre }) {
   const getImage = () => {
     if (genre === 'bollywood') {
-      return <img src={bollywood} alt="genreImage" />;
+      return <img className="genreDetailImage" src={bollywood} alt="genreImage" />;
     }
     if (genre === 'country') {
-      return <img src={country} alt="genreImage" />;
+      return <img className="genreDetailImage" src={country} alt="genreImage" />;
     }
     if (genre === 'pop') {
-      return <img src={pop} alt="genreImage" />;
+      return <img className="genreDetailImage" src={pop} alt="genreImage" />;
     }
     if (genre === 'rock') {
-      return <img src={rock} alt="genreImage" />;
+      return <img className="genreDetailImage" src={rock} alt="genreImage" />;
     }
     return null;
   };
   return (
-    <div>
+    <div className="genreDetailContainer">
       {getImage()}
-      <p>{genre}</p>
+      <p className="genreDetailText">{genre}</p>
     </div>
   );
 }
