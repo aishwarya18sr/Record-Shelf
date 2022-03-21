@@ -2,3 +2,14 @@ body {
     margin:0px;
     padding:0px;
 }
+
+.homepageSimile {
+    font-size:25px;
+    padding-left:calc(100vw/2);
+    padding-top:calc(100vh/2 - 200px);
+}
+
+.homepageText {
+    font-size: 25px;
+    padding-left:calc(100vw/2 - 100px);
+}
