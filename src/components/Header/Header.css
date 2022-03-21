@@ -1,6 +1,6 @@
 .recordsHeader {
-    width:auto;
-    height:60px;
+    width:calc(100vw);
+    height:calc(100vh/14);
     background-color:#38497E;
 }
 
