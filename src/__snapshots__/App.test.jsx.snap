@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`app should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <div>
+      <header
+        class="recordsHeader"
+      >
+        <p
+          class="headerP"
+        >
+          My 
+          <span
+            class="headerSpan"
+          >
+            Record
+          </span>
+           Shelf
+        </p>
+      </header>
+      <p
+        class="homepageSimile"
+      >
+        :((
+      </p>
+      <p
+        class="homepageText"
+      >
+        seems a bit empty in here..
+      </p>
+      <button
+        class="homepageButton"
+        type="submit"
+      >
+        sync
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
