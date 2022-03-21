@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
-import { HOME_ROUTE } from './constants/routes';
+import SongsPage from './pages/SongsPage/SongsPage';
+import { HOME_ROUTE, SONGS_ROUTE } from './constants/routes';
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
           <Route
             path={HOME_ROUTE}
             element={<HomePage />}
+          />
+          <Route
+            path={SONGS_ROUTE}
+            element={<SongsPage />}
           />
           <Route path="*" element={<div>404 Error. Page not found</div>} />
         </Routes>
