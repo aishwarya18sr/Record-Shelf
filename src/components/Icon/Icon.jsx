@@ -2,11 +2,15 @@ import './Icon.css';
 import React from 'react';
 import PropTypes from 'prop-types';
 import iconGenre from '../../assets/icons/icon-genre.svg';
+import iconGrid from '../../assets/icons/icon-grid.svg';
 
 function Icon({ icon, onClick }) {
   const getIcon = () => {
-    if (icon) {
+    if (icon === 'genre') {
       return <img src={iconGenre} alt="genreIcon" />;
+    }
+    if (icon === 'grid') {
+      return <img src={iconGrid} alt="gridIcon" />;
     }
     return null;
   };

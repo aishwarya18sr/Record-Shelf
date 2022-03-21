@@ -9,3 +9,8 @@ export const getLikesUrl = (recordId) => ({
   url: `/${recordId}/likes`,
   method: 'get',
 });
+
+export const changeLikesUrl = (recordId) => ({
+  url: `/${recordId}/likes`,
+  method: 'patch',
+});
