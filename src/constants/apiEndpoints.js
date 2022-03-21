@@ -1,7 +1,7 @@
 export const BACKEND_URL = '/api/records';
 
 export const RECORDS_URL = {
-  url: '/',
+  url: '',
   method: 'get',
 };
 

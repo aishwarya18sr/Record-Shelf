@@ -1,0 +1,27 @@
+.iconContainer {
+    padding:0px;
+    padding-left:330px;
+    padding-top:20px;
+    width:40px;
+    height:40px;
+}
+
+.commonIcon {
+    padding:0px;
+    margin-left: max(340px,100%);
+    width:40px;
+    height:40px; 
+    margin-top:25px;
+    background-color: #DFDFDF;
+    border:0px;
+    color:grey;
+}
+
+.commonIcon:hover {
+    background-color: white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+}
