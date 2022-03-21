@@ -2,7 +2,7 @@
 
 ### 1. Home page
 
-![home page image](./screenshots/Homepage.png "home page image")
+![home page image](./screenshots/HomePage.png "home page image")
 
 ### 2. Songs Page
 
