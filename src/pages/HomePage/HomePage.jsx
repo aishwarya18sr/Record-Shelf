@@ -1,19 +1,11 @@
-import React, { useEffect } from 'react';
-import { RECORDS_URL } from '../../constants/apiEndpoints';
-import makeRequest from '../../utils/makeRequest/makeRequest';
+import React from 'react';
 import './HomePage.css';
+import Header from '../../components/Header/Header';
 
 function HomePage() {
-  // const [recordsData, setRecordsData] = useState([]);
-
-  useEffect(() => {
-    makeRequest(RECORDS_URL).then((response) => {
-      console.log(response);
-    });
-  }, []);
   return (
     <div>
-      <p>My Record Shelf</p>
+      <Header />
     </div>
   );
 }

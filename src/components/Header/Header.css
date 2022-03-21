@@ -1,0 +1,17 @@
+.recordsHeader {
+    width:auto;
+    height:60px;
+    background-color:#38497E;
+}
+
+.headerP {
+    padding-left:10px;
+    padding-top:15px;
+    margin:0px;
+    font-size: 25px;
+    color:#F5F5F5;
+}
+
+.headerSpan {
+    font-weight: bolder;
+}
