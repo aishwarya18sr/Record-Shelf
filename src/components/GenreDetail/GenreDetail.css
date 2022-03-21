@@ -25,3 +25,10 @@
     left:75px;
     bottom:18px;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .genreDetailContainer {
+      margin-left:150px;
+  }
+}
