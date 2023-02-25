@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
-import './Card.css';
-import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import Heart from '../Heart/Heart';
+import React, { useEffect, useState } from 'react';
+import { changeLikesUrl, getLikesUrl } from '../../constants/apiEndpoints';
 import makeRequest from '../../utils/makeRequest/makeRequest';
-import { getLikesUrl, changeLikesUrl } from '../../constants/apiEndpoints';
+import Heart from '../Heart/Heart';
+import './Card.css';
 
 function Card({
   songId, songName, artistName, imageUrl,
@@ -12,17 +12,17 @@ function Card({
   const [songsLikes, setLikesData] = useState({});
 
   useEffect(() => {
-    makeRequest(getLikesUrl(songId)).then((response) => { setLikesData(response.data); });
+    makeRequest(getLikesUrl(songId)).then((response) => {
+      setLikesData(response.data);
+    });
   }, []);
 
   const heartClickHandler = () => {
-    let updatedCount = songsLikes.count;
-    if (songsLikes.like) {
-      updatedCount -= 1;
-    } else {
-      updatedCount += 1;
-    }
-    makeRequest(changeLikesUrl(songId), { data: { like: !songsLikes.like, count: updatedCount } }).then((response) => { setLikesData(response.data); });
+    makeRequest(changeLikesUrl(songId), {
+      data: { like: !songsLikes.like },
+    }).then((response) => {
+      setLikesData(response.data);
+    });
   };
 
   if (songsLikes !== {}) {
@@ -34,7 +34,12 @@ function Card({
             <p className="cardSongName">{songName}</p>
             <p className="cardArtistName">{artistName}</p>
           </div>
-          <Heart icon="heart" isLiked={songsLikes.like} count={songsLikes.count} onClick={heartClickHandler} />
+          <Heart
+            icon="heart"
+            isLiked={songsLikes.like}
+            count={songsLikes.count}
+            onClick={heartClickHandler}
+          />
         </div>
       </div>
     );

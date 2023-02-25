@@ -1,15 +1,14 @@
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/Header/Header';
+import AllCards from '../../components/AllCards/AllCards';
 import CategoryTitle from '../../components/CategoryTitle/CategoryTitle';
-import './GenresPage.css';
+import GenreDetail from '../../components/GenreDetail/GenreDetail';
 import Icon from '../../components/Icon/Icon';
 import { RECORDS_URL } from '../../constants/apiEndpoints';
-import makeRequest from '../../utils/makeRequest/makeRequest';
-import AllCards from '../../components/AllCards/AllCards';
 import { SONGS_ROUTE } from '../../constants/routes';
-import GenreDetail from '../../components/GenreDetail/GenreDetail';
+import makeRequest from '../../utils/makeRequest/makeRequest';
+import './GenresPage.css';
 
 function GenresPage() {
   const [songsData, setSongsData] = useState([]);
@@ -25,7 +24,6 @@ function GenresPage() {
   if (songsData !== []) {
     return (
       <div>
-        <Header />
         <div className="genrespageMain">
           <div className="genrespageHeading">
             <CategoryTitle categoryText="genres" />

@@ -1,15 +1,16 @@
 .songspageHeading {
     display: flex;
     flex-direction: row;
+    height: 100%;
 }
 
 .songspageMain {
     background-color: #DFDFDF;
-    height:100%;
+    height: 100%;
     /* width:calc(100vw/1.3); */
-    width:1200px;
+    width: 1200px;
     margin-left: calc(100vw/9);
-    padding:0px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
 }
@@ -17,7 +18,7 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .songspageMain {
-        width:400px;
-        margin-left:10px;
+        width: 400px;
+        margin-left: 10px;
     }
 }

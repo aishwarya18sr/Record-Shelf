@@ -6,9 +6,7 @@ function Header() {
     <header className="recordsHeader">
       <p className="headerP">
         My
-        {' '}
         <span className="headerSpan">Record</span>
-        {' '}
         Shelf
       </p>
     </header>

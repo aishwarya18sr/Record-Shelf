@@ -1,14 +1,13 @@
 /* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/Header/Header';
+import AllCards from '../../components/AllCards/AllCards';
 import CategoryTitle from '../../components/CategoryTitle/CategoryTitle';
-import './SongsPage.css';
 import Icon from '../../components/Icon/Icon';
 import { RECORDS_URL } from '../../constants/apiEndpoints';
-import makeRequest from '../../utils/makeRequest/makeRequest';
-import AllCards from '../../components/AllCards/AllCards';
 import { GENRES_ROUTE } from '../../constants/routes';
+import makeRequest from '../../utils/makeRequest/makeRequest';
+import './SongsPage.css';
 
 function SongsPage() {
   const [songsData, setSongsData] = useState([]);
@@ -23,15 +22,12 @@ function SongsPage() {
 
   if (songsData !== []) {
     return (
-      <div>
-        <Header />
-        <div className="songspageMain">
-          <div className="songspageHeading">
-            <CategoryTitle categoryText="all songs" />
-            <Icon icon="genre" onClick={iconClickHandler} />
-          </div>
-          <AllCards songsData={songsData} />
+      <div className="songspageMain">
+        <div className="songspageHeading">
+          <CategoryTitle categoryText="all songs" />
+          <Icon icon="genre" onClick={iconClickHandler} />
         </div>
+        <AllCards songsData={songsData} />
       </div>
     );
   }

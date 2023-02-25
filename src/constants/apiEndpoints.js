@@ -1,16 +1,16 @@
-export const BACKEND_URL = '/api/records';
+export const BACKEND_URL = 'http://localhost:8080';
 
 export const RECORDS_URL = {
-  url: '',
+  url: 'api/records',
   method: 'get',
 };
 
 export const getLikesUrl = (recordId) => ({
-  url: `/${recordId}/likes`,
+  url: `api/records/${recordId}/likes`,
   method: 'get',
 });
 
 export const changeLikesUrl = (recordId) => ({
-  url: `/${recordId}/likes`,
+  url: `api/records/${recordId}/likes`,
   method: 'patch',
 });

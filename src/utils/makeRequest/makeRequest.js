@@ -1,6 +1,6 @@
 import axios from 'axios';
-import AUTHORIZATION_TOKEN from '../../constants/authorizationToken';
 import { BACKEND_URL } from '../../constants/apiEndpoints';
+import AUTHORIZATION_TOKEN from '../../constants/authorizationToken';
 
 const makeRequest = async (apiEndPoint, dynamicConfig = {}) => {
   const requestDetails = {
@@ -8,7 +8,7 @@ const makeRequest = async (apiEndPoint, dynamicConfig = {}) => {
     url: `${BACKEND_URL}/${apiEndPoint.url}`,
     ...dynamicConfig,
     headers: {
-      authorization: AUTHORIZATION_TOKEN,
+      authorization: `Bearer ${AUTHORIZATION_TOKEN}`,
     },
   };
   const { data } = await axios(requestDetails);
