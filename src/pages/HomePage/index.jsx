@@ -9,10 +9,10 @@ function HomePage() {
     navigate(SONGS_ROUTE);
   };
   return (
-    <div>
-      <p className="homepageSimile">:((</p>
-      <p className="homepageText">seems a bit empty in here..</p>
-      <button onClick={clickHandler} className="homepageButton" type="submit">sync</button>
+    <div className="homePageContainer">
+      <p className="homePageText">:((</p>
+      <p className="homePageText">seems a bit empty in here..</p>
+      <button onClick={clickHandler} className="homePageButton" type="button">sync</button>
     </div>
   );
 }

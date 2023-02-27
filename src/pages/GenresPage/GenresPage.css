@@ -1,24 +1,22 @@
-.genrespageHeading {
+.genresPageHeading {
     display: flex;
     flex-direction: row;
 }
 
-.genrespageMain {
+.genresPageMain {
     background-color: #DFDFDF;
-    height:100%;
-    /* width:calc(100vw/1.3); */
-    width:1200px;
+    height: 100%;
+    width: 1200px;
     margin-left: calc(100vw/9);
-    padding:0px;
+    padding: 0px;
     display: flex;
     flex-direction: column;
 }
 
-/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .genrespageMain {
-        width:600px;
-        margin:0px;
-        margin-left:20px;
+    .genresPageMain {
+        width: 600px;
+        margin: 0px;
+        margin-left: 20px;
     }
 }

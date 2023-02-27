@@ -31,8 +31,8 @@ function GenresPage() {
   if (allSongsData) {
     return (
       <div>
-        <div className="genrespageMain">
-          <div className="genrespageHeading">
+        <div className="genresPageMain">
+          <div className="genresPageHeading">
             <CategoryTitle categoryText="genres" />
             <Icon icon="grid" onClick={iconClickHandler} />
           </div>
