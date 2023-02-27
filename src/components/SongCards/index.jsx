@@ -1,18 +1,18 @@
 /* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import React from 'react';
-import Card from '../Card/Card';
-import './AllCards.css';
+import SongCard from '../SongCard';
+import './SongCards.css';
 
-function AllCards({ songsData, onHeartClickHandler }) {
+function SongCards({ songsData, onHeartClickHandler }) {
   return (
-    <div className="allCardsContainer">
-      {(songsData.length !== 0) ? songsData.map((eachSong) => <Card key={eachSong.id} songData={eachSong} onHeartClickHandler={onHeartClickHandler} />) : <p />}
+    <div className="songCardsContainer">
+      {(songsData.length !== 0) ? songsData.map((eachSong) => <SongCard key={eachSong.id} songData={eachSong} onHeartClickHandler={onHeartClickHandler} />) : <p />}
     </div>
   );
 }
 
-AllCards.propTypes = {
+SongCards.propTypes = {
   songsData: PropTypes.arrayOf(PropTypes.shape(
     {
       id: PropTypes.string,
@@ -33,4 +33,4 @@ AllCards.propTypes = {
   onHeartClickHandler: PropTypes.func.isRequired,
 };
 
-export default AllCards;
+export default SongCards;

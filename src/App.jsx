@@ -1,11 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Header from './components/Header/Header';
+import { Header } from './components';
 import { GENRES_ROUTE, HOME_ROUTE, SONGS_ROUTE } from './constants/routes';
-import GenresPage from './pages/GenresPage/GenresPage';
-import HomePage from './pages/HomePage/HomePage';
-import SongsPage from './pages/SongsPage/SongsPage';
+import { GenresPage, HomePage, SongsPage } from './pages';
 
 function App() {
   return (

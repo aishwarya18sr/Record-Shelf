@@ -1,0 +1,8 @@
+.songCardsContainer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-left: 120px;
+    padding-right: 120px;
+}

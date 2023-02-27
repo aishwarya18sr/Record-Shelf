@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import React from 'react';
-import Heart from '../Heart/Heart';
-import './Card.css';
+import Heart from '../Heart';
+import './SongCard.css';
 
-function Card({
+function SongCard({
   songData, onHeartClickHandler,
 }) {
   return (
@@ -26,7 +26,7 @@ function Card({
   );
 }
 
-Card.propTypes = {
+SongCard.propTypes = {
   songData: PropTypes.shape(
     {
       id: PropTypes.string,
@@ -47,4 +47,4 @@ Card.propTypes = {
   onHeartClickHandler: PropTypes.func.isRequired,
 };
 
-export default Card;
+export default SongCard;

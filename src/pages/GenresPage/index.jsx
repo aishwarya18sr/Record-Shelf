@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AllCards from '../../components/AllCards/AllCards';
-import CategoryTitle from '../../components/CategoryTitle/CategoryTitle';
-import GenreDetail from '../../components/GenreDetail/GenreDetail';
-import Icon from '../../components/Icon/Icon';
+import CategoryTitle from '../../components/CategoryTitle';
+import GenreDetail from '../../components/GenreDetail';
+import Icon from '../../components/Icon';
+import AllCards from '../../components/SongCards';
 import { changeLikesUrl } from '../../constants/apiEndpoints';
 import { SONGS_ROUTE } from '../../constants/routes';
 import { getAllSongGenreNames, getAllSongsData, updateAllSongsData } from '../../utils/common';
