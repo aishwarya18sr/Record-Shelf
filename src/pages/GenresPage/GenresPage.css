@@ -2,19 +2,51 @@
     display: flex;
     flex-direction: column;
     background-color: #DFDFDF;
-    flex-wrap: wrap;
-    height: 100%;
-    width: 100%;
-    margin: 0px 100px 0px 100px;
+    margin: 0px 200px 0px 200px;
+    padding: 0px 160px 100px 160px;
 }
 
 .genresPageHeading {
+    height: 100px;
     display: flex;
     flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
 }
 
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 1420px) {
     .genresPageMain {
-        margin: 0px 10px 0px 10px;
+        padding: 0px 60px 50px 60px;
+    }
+}
+
+@media only screen and (max-width: 1230px) {
+    .genresPageMain {
+        padding: 0px 20px 50px 20px;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .genresPageMain {
+        padding: 0px 120px 50px 120px;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .genresPageMain {
+        padding: 0px 20px 50px 20px;
+        margin: 0px 100px 0px 100px;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .genresPageMain {
+        margin: 0px 20px 0px 20px;
+        padding: 0px 120px 50px 120px;
+    }
+
+    .genresPageHeading {
+        height: 150px
     }
 }

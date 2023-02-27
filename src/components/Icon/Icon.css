@@ -1,5 +1,5 @@
 .iconContainer {
-    padding-top: 80px;
+    padding-top: 65px;
     margin-right: 80px;
 }
 
@@ -8,10 +8,7 @@
     height: 40px;
     background-color: #DFDFDF;
     border: 0px;
-}
-
-.commonIcon:hover {
-    background-color: white;
+    cursor: pointer;
 }
 
 /* Extra small devices (phones, 600px and down) */

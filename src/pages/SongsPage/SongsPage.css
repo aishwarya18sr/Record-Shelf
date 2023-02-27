@@ -2,19 +2,53 @@
     display: flex;
     flex-direction: column;
     background-color: #DFDFDF;
-    margin: 0px 100px 0px 100px;
-    padding: 0px 160px 100px 160px;
+    margin: 0px 200px 0px 200px;
+    padding: 0px 160px 50px 160px;
+    justify-content: center;
+    align-items: center;
 }
 
 .songsPageHeading {
     display: flex;
+    height: 150px;
+    min-width: 300px;
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1420px) {
     .songsPageMain {
-        margin: 0px 10px 0px 10px;
+        padding: 0px 60px 50px 60px;
+    }
+}
+
+@media only screen and (max-width: 1230px) {
+    .songsPageMain {
+        padding: 0px 20px 50px 20px;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .songsPageMain {
+        padding: 0px 120px 50px 120px;
+    }
+}
+
+@media only screen and (max-width: 1110px) {
+    .songsPageMain {
+        padding: 0px 20px 50px 20px;
+        margin: 0px 100px 0px 100px;
+    }
+}
+
+@media only screen and (max-width: 830px) {
+    .songsPageMain {
+        margin: 0px 20px 0px 20px;
+        padding: 0px 120px 50px 120px;
+    }
+
+    .songsPageHeading {
+        height: 150px
     }
 }

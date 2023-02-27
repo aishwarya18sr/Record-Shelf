@@ -3,3 +3,10 @@
     font-weight: bolder;
     color: black;
 }
+
+@media only screen and (max-width: 830px) {
+    .categoryText {
+        min-width: 200px;
+        font-size: 45px;
+    }
+}
