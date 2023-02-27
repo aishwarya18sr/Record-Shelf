@@ -26,4 +26,4 @@ yarn-error.log*
 .vscode
 
 # #Ignore Authorization Token
-# src/constants/authorizationToken.js
+src/constants/authorizationToken.js
