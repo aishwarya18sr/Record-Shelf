@@ -11,7 +11,7 @@ function Heart({ isLiked, count, onClickHandler }) {
           imagePath={`icons/heart-${isLiked ? 'red' : 'gray'}`}
           imageExtension="svg"
           defaultImagePath="icons/heart-gray"
-          altText={isLiked ? 'Red heart' : 'Gray heart'}
+          altText={isLiked ? 'red-heart' : 'gray-heart'}
           className="heartImage"
         />
       </button>
