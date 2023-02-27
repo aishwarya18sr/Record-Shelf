@@ -20,6 +20,7 @@
 
 .heartText {
   position: absolute;
+  cursor: pointer;
   font-size: larger;
   left: 22px;
   bottom: 0px;

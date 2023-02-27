@@ -6,7 +6,14 @@
 
 @media only screen and (max-width: 830px) {
     .categoryText {
-        min-width: 200px;
-        font-size: 45px;
+        min-width: 220px;
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 330px) {
+    .categoryText {
+        min-width: 120px;
+        font-size: 50px;
     }
 }

@@ -4,6 +4,7 @@
     background-color: #DFDFDF;
     margin: 0px 200px 0px 200px;
     padding: 0px 160px 100px 160px;
+    overflow: scroll;
 }
 
 .genresPageHeading {
@@ -43,10 +44,6 @@
 @media only screen and (max-width: 830px) {
     .genresPageMain {
         margin: 0px 20px 0px 20px;
-        padding: 0px 120px 50px 120px;
-    }
-
-    .genresPageHeading {
-        height: 150px
+        padding: 0px 20px 50px 20px;
     }
 }
