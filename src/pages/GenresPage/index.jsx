@@ -11,7 +11,7 @@ import makeRequest from '../../utils/makeRequest/makeRequest';
 import './GenresPage.css';
 
 function GenresPage() {
-  const [allSongsData, setAllSongsData] = useState([]);
+  const [allSongsData, setAllSongsData] = useState();
   const navigate = useNavigate();
   useEffect(() => {
     getAllSongsData(setAllSongsData, navigate).then();
@@ -49,7 +49,7 @@ function GenresPage() {
       </div>
     );
   }
-  return <p>Loading...</p>;
+  return <div className="genresPageLoaderContainer"><p>Loading...</p></div>;
 }
 
 export default GenresPage;

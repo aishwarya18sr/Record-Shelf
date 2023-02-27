@@ -11,7 +11,7 @@ import makeRequest from '../../utils/makeRequest/makeRequest';
 import './SongsPage.css';
 
 function SongsPage() {
-  const [allSongsData, setAllSongsData] = useState([]);
+  const [allSongsData, setAllSongsData] = useState();
   const navigate = useNavigate();
   useEffect(() => {
     getAllSongsData(setAllSongsData, navigate).then();
@@ -39,7 +39,7 @@ function SongsPage() {
       </div>
     );
   }
-  return <p>Loading...</p>;
+  return <div className="songsPageLoaderContainer"><p>Loading...</p></div>;
 }
 
 export default SongsPage;
