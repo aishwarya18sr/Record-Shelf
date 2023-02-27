@@ -51,6 +51,7 @@ function GenresPage() {
       </div>
     );
   }
+  return <p>Loading...</p>;
 }
 
 export default GenresPage;

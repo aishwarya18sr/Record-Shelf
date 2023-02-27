@@ -28,7 +28,7 @@ function SongsPage() {
     navigate(GENRES_ROUTE);
   };
 
-  if (allSongsData[0]) {
+  if (allSongsData) {
     return (
       <div className="songspageMain">
         <div className="songspageHeading">
