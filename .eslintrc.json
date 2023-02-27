@@ -19,6 +19,9 @@
         "react"
     ],
     "rules": {
+        "indent": [
+            "off"
+        ],
         "no-multiple-empty-lines": ["error", { "max": 1, "maxBOF":1, "maxEOF": 1 }],
         "comma-dangle": ["error", "never"]
     }
