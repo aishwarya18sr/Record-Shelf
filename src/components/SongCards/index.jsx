@@ -19,18 +19,18 @@ SongCards.propTypes = {
       name: PropTypes.string,
       artist: PropTypes.shape({
         id: PropTypes.string,
-        name: PropTypes.string,
+        name: PropTypes.string
       }),
       imageUrl: PropTypes.string,
       likeDetails: PropTypes.shape(
         {
           count: PropTypes.number,
-          like: PropTypes.bool,
-        },
-      ),
-    },
+          like: PropTypes.bool
+        }
+      )
+    }
   )).isRequired,
-  onHeartClickHandler: PropTypes.func.isRequired,
+  onHeartClickHandler: PropTypes.func.isRequired
 };
 
 export default SongCards;

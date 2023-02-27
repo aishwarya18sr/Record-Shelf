@@ -1,5 +1,5 @@
-import React from 'react';
 import PropTypes from 'prop-types';
+import React from 'react';
 import './CategoryTitle.css';
 
 function CategoryTitle({ categoryText }) {
@@ -9,7 +9,7 @@ function CategoryTitle({ categoryText }) {
 }
 
 CategoryTitle.propTypes = {
-  categoryText: PropTypes.string.isRequired,
+  categoryText: PropTypes.string.isRequired
 };
 
 export default CategoryTitle;

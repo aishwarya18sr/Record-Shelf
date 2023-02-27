@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import axios from 'axios';
 import { BACKEND_URL } from '../../constants/apiEndpoints';
 import AUTHORIZATION_TOKEN from '../../constants/authorizationToken';
@@ -19,7 +20,6 @@ const makeRequest = async (apiEndPoint, navigate, dynamicConfig = {}) => {
   } catch (e) {
     if (navigate) {
       const errorStatus = e.response?.status;
-      navigate(ERROR_ROUTE);
       if (errorStatus) {
         navigate(`${ERROR_ROUTE}/${errorStatus}`);
       } else {
@@ -27,7 +27,6 @@ const makeRequest = async (apiEndPoint, navigate, dynamicConfig = {}) => {
       }
     }
   }
-  return null;
 };
 
 export default makeRequest;

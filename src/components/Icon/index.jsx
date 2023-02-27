@@ -22,7 +22,7 @@ function Icon({ icon, onClickHandler }) {
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  onClickHandler: PropTypes.func.isRequired,
+  onClickHandler: PropTypes.func.isRequired
 };
 
 export default Icon;

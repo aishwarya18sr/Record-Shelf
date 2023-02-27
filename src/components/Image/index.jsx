@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 function Image({
-  imagePath, defaultImagePath, imageExtension, altText, className,
+  imagePath, defaultImagePath, imageExtension, altText, className
 }) {
   const getImage = () => {
     let imageSrc;
@@ -29,7 +29,7 @@ function Image({
 Image.propTypes = {
   imagePath: PropTypes.string.isRequired,
   altText: PropTypes.string.isRequired,
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired
 };
 
 export default Image;

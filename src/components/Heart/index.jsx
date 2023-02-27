@@ -23,7 +23,7 @@ function Heart({ isLiked, count, onClickHandler }) {
 Heart.propTypes = {
   isLiked: PropTypes.bool.isRequired,
   count: PropTypes.number.isRequired,
-  onClickHandler: PropTypes.func.isRequired,
+  onClickHandler: PropTypes.func.isRequired
 };
 
 export default Heart;

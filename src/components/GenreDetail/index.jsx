@@ -19,7 +19,7 @@ function GenreDetail({ genre }) {
 }
 
 GenreDetail.propTypes = {
-  genre: PropTypes.string.isRequired,
+  genre: PropTypes.string.isRequired
 };
 
 export default GenreDetail;
