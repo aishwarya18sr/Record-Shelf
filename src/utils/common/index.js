@@ -1,5 +1,5 @@
 import { GET_LIKES_URL, RECORDS_URL } from '../../constants/apiEndpoints';
-import makeRequest from '../makeRequest/makeRequest';
+import makeRequest from '../makeRequest';
 
 export const getSongIndexById = (
   allSongsData,

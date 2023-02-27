@@ -7,7 +7,7 @@ import AllCards from '../../components/SongCards';
 import { UPDATE_LIKES_URL } from '../../constants/apiEndpoints';
 import { SONGS_ROUTE } from '../../constants/routes';
 import { getAllSongGenreNames, getAllSongsData, updateAllSongsData } from '../../utils/common';
-import makeRequest from '../../utils/makeRequest/makeRequest';
+import makeRequest from '../../utils/makeRequest';
 import './GenresPage.css';
 
 function GenresPage() {
