@@ -15,6 +15,7 @@ function Image({
     }
     return (
       <img
+        data-testid={`${altText}-image`}
         className={className}
         src={imageSrc}
         alt={altText}
