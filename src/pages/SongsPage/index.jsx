@@ -30,8 +30,8 @@ function SongsPage() {
 
   if (allSongsData) {
     return (
-      <div className="songspageMain">
-        <div className="songspageHeading">
+      <div className="songsPageMain">
+        <div className="songsPageHeading">
           <CategoryTitle categoryText="all songs" />
           <Icon icon="genre" onClick={iconClickHandler} />
         </div>

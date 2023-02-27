@@ -21,4 +21,5 @@
     font-weight: bolder;
     text-align: center;
     border: 0.5px solid black;
+    cursor: pointer;
 }

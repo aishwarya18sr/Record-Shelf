@@ -1,20 +1,13 @@
 .iconContainer {
-    padding:0px;
-    padding-left:360px;
-    padding-top:20px;
-    width:40px;
-    height:40px;
+    padding-top: 80px;
+    margin-right: 80px;
 }
 
 .commonIcon {
-    padding:0px;
-    margin-left: max(340px,100%);
-    width:40px;
-    height:40px; 
-    margin-top:25px;
+    width: 40px;
+    height: 40px;
     background-color: #DFDFDF;
-    border:0px;
-    color:grey;
+    border: 0px;
 }
 
 .commonIcon:hover {
@@ -22,6 +15,4 @@
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-
-}
+@media only screen and (max-width: 600px) {}

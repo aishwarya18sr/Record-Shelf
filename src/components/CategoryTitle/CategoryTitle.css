@@ -1,16 +1,5 @@
 .categoryText {
-    font-size:45px;
+    font-size: 55px;
     font-weight: bolder;
     color: black;
-    margin:0px;
-    padding-left:150px;
-    padding-top:30px;
-}
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-    .categoryText {
-        margin:0px;
-        padding-left:160px;
-    }
 }

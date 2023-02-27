@@ -1,48 +1,51 @@
 .cardContainer {
-    background-color:#ABABAB;
-    color:black;
-    padding:10px;
-    display:flex;
-    margin-left:1px;
-    margin-right: 1px;
-    margin-top: 10px;
-    margin-bottom:10px;
-    width:250px;
-    height:250px;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
+    background-color: #ABABAB;
+    color: black;
+    padding: 10px;
+    margin: 10px 1px 10px 1px;
+    width: 250px;
+    height: 200px;
     border-radius: 10px;
 }
 
 .cardImage {
-    margin-left:65px;
-    width:120px;
-    height:120px;
+    align-self: center;
+    width: 120px;
+    height: 120px;
     border-radius: 70px;
 }
 
 .cardContent {
-    display:flex;
+    display: flex;
     flex-direction: row;
 }
 
 .cardText {
-    width:150px;
-    height:50px;
-    padding:0px;
-    padding-left: 30px;
-    margin:0px;
-    margin-top:20px;
     display: flex;
     flex-direction: column;
+    width: 150px;
+    padding-left: 30px;
+    margin-top: 20px;
 }
 
 .cardSongName {
-    margin:0px;
-    font-size: 18px;
+    margin: 0px;
+    font-size: 28px;
+    width: 170px;
+    font-weight: light;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
 }
 
 .cardArtistName {
-    margin:0px;
-    font-size: 14px;
+    margin: 0px;
+    font-size: 17px;
+    width: 170px;
     font-weight: bolder;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
 }

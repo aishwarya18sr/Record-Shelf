@@ -30,24 +30,22 @@ function GenresPage() {
 
   if (allSongsData) {
     return (
-      <div>
-        <div className="genresPageMain">
-          <div className="genresPageHeading">
-            <CategoryTitle categoryText="genres" />
-            <Icon icon="grid" onClick={iconClickHandler} />
-          </div>
-          {getAllSongGenreNames(allSongsData).map((eachGenreName) => (
-            <div key={eachGenreName}>
-              <GenreDetail genre={eachGenreName.toLowerCase()} />
-              <AllCards
-                songsData={allSongsData.filter(
-                  (eachSong) => eachSong.genre.name === eachGenreName,
-                )}
-                onHeartClickHandler={onHeartClickHandler}
-              />
-            </div>
-          ))}
+      <div className="genresPageMain">
+        <div className="genresPageHeading">
+          <CategoryTitle categoryText="genres" />
+          <Icon icon="grid" onClick={iconClickHandler} />
         </div>
+        {getAllSongGenreNames(allSongsData).map((eachGenreName) => (
+          <div key={eachGenreName}>
+            <GenreDetail genre={eachGenreName.toLowerCase()} />
+            <AllCards
+              songsData={allSongsData.filter(
+                (eachSong) => eachSong.genre.name === eachGenreName,
+              )}
+              onHeartClickHandler={onHeartClickHandler}
+            />
+          </div>
+        ))}
       </div>
     );
   }
