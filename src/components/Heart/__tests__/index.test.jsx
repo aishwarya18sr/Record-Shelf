@@ -3,6 +3,9 @@ import React from 'react';
 import Heart from '..';
 
 describe('Heart', () => {
+    afterEach(() => {
+        jest.clearAllMocks();
+      });
     const mockOnClickHandler = jest.fn();
     const renderHeartComponent = (isLiked) => render(
       <Heart isLiked={isLiked} count={2} onClickHandler={mockOnClickHandler} />
