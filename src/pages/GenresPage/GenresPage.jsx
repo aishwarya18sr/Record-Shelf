@@ -6,7 +6,7 @@ import GenreDetail from '../../components/GenreDetail/GenreDetail';
 import Icon from '../../components/Icon/Icon';
 import { changeLikesUrl } from '../../constants/apiEndpoints';
 import { SONGS_ROUTE } from '../../constants/routes';
-import { getAllSongsData, updateAllSongsData } from '../../utils/common';
+import { getAllSongGenreNames, getAllSongsData, updateAllSongsData } from '../../utils/common';
 import makeRequest from '../../utils/makeRequest/makeRequest';
 import './GenresPage.css';
 
@@ -36,34 +36,17 @@ function GenresPage() {
             <CategoryTitle categoryText="genres" />
             <Icon icon="grid" onClick={iconClickHandler} />
           </div>
-          <GenreDetail genre="bollywood" />
-          <AllCards
-            songsData={allSongsData.filter(
-              (eachSong) => eachSong.genre.name === 'Bollywood',
-            )}
-            onHeartClickHandler={onHeartClickHandler}
-          />
-          <GenreDetail genre="country" />
-          <AllCards
-            songsData={allSongsData.filter(
-              (eachSong) => eachSong.genre.name === 'Country',
-            )}
-            onHeartClickHandler={onHeartClickHandler}
-          />
-          <GenreDetail genre="pop" />
-          <AllCards
-            songsData={allSongsData.filter(
-              (eachSong) => eachSong.genre.name === 'Pop',
-            )}
-            onHeartClickHandler={onHeartClickHandler}
-          />
-          <GenreDetail genre="rock" />
-          <AllCards
-            songsData={allSongsData.filter(
-              (eachSong) => eachSong.genre.name === 'Rock',
-            )}
-            onHeartClickHandler={onHeartClickHandler}
-          />
+          {getAllSongGenreNames(allSongsData).map((eachGenreName) => (
+            <div key={eachGenreName}>
+              <GenreDetail genre={eachGenreName.toLowerCase()} />
+              <AllCards
+                songsData={allSongsData.filter(
+                  (eachSong) => eachSong.genre.name === eachGenreName,
+                )}
+                onHeartClickHandler={onHeartClickHandler}
+              />
+            </div>
+          ))}
         </div>
       </div>
     );

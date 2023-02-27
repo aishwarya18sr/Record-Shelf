@@ -39,3 +39,7 @@ export const getAllSongsData = async (setAllSongsData) => {
     setAllSongsData(allSongDetails);
   });
 };
+
+export const getAllSongGenreNames = (allSongsData) => [...new Set(
+  allSongsData.map((eachSongData) => eachSongData.genre.name),
+)];

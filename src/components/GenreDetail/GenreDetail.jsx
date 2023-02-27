@@ -1,26 +1,24 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-dynamic-require */
+import PropTypes from 'prop-types';
 import React from 'react';
 import './GenreDetail.css';
-import PropTypes from 'prop-types';
-import bollywood from '../../assets/images/genre-bollywood.png';
-import country from '../../assets/images/genre-country.png';
-import pop from '../../assets/images/genre-pop.png';
-import rock from '../../assets/images/genre-rock.png';
 
 function GenreDetail({ genre }) {
   const getImage = () => {
-    if (genre === 'bollywood') {
-      return <img className="genreDetailImage" src={bollywood} alt="genreImage" />;
+    let genreImage;
+    try {
+      genreImage = require(`../../assets/images/genre-${genre}.png`);
+    } catch (e) {
+      genreImage = require('../../assets/images/genre-default.png');
     }
-    if (genre === 'country') {
-      return <img className="genreDetailImage" src={country} alt="genreImage" />;
-    }
-    if (genre === 'pop') {
-      return <img className="genreDetailImage" src={pop} alt="genreImage" />;
-    }
-    if (genre === 'rock') {
-      return <img className="genreDetailImage" src={rock} alt="genreImage" />;
-    }
-    return null;
+    return (
+      <img
+        className="genreDetailImage"
+        src={genreImage}
+        alt="genreImage"
+      />
+    );
   };
   return (
     <div className="genreDetailContainer">
