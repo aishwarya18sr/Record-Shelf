@@ -1,27 +1,34 @@
-/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AllCards from '../../components/AllCards/AllCards';
 import CategoryTitle from '../../components/CategoryTitle/CategoryTitle';
 import GenreDetail from '../../components/GenreDetail/GenreDetail';
 import Icon from '../../components/Icon/Icon';
-import { RECORDS_URL } from '../../constants/apiEndpoints';
+import { changeLikesUrl } from '../../constants/apiEndpoints';
 import { SONGS_ROUTE } from '../../constants/routes';
+import { getAllSongsData, updateAllSongsData } from '../../utils/common';
 import makeRequest from '../../utils/makeRequest/makeRequest';
 import './GenresPage.css';
 
 function GenresPage() {
-  const [songsData, setSongsData] = useState([]);
+  const [allSongsData, setAllSongsData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    makeRequest(RECORDS_URL).then((response) => { setSongsData(response.data); });
+    getAllSongsData(setAllSongsData).then();
   }, []);
+
+  const onHeartClickHandler = async (songId, songLike) => {
+    const updatedLikedResponse = await makeRequest(changeLikesUrl(songId), {
+      data: { like: !songLike },
+    });
+    updateAllSongsData(songId, updatedLikedResponse.data, allSongsData, setAllSongsData);
+  };
 
   const iconClickHandler = () => {
     navigate(SONGS_ROUTE);
   };
 
-  if (songsData !== []) {
+  if (allSongsData) {
     return (
       <div>
         <div className="genrespageMain">
@@ -30,13 +37,33 @@ function GenresPage() {
             <Icon icon="grid" onClick={iconClickHandler} />
           </div>
           <GenreDetail genre="bollywood" />
-          <AllCards songsData={songsData.filter((eachSong) => eachSong.genre.name === 'Bollywood')} />
+          <AllCards
+            songsData={allSongsData.filter(
+              (eachSong) => eachSong.genre.name === 'Bollywood',
+            )}
+            onHeartClickHandler={onHeartClickHandler}
+          />
           <GenreDetail genre="country" />
-          <AllCards songsData={songsData.filter((eachSong) => eachSong.genre.name === 'Country')} />
+          <AllCards
+            songsData={allSongsData.filter(
+              (eachSong) => eachSong.genre.name === 'Country',
+            )}
+            onHeartClickHandler={onHeartClickHandler}
+          />
           <GenreDetail genre="pop" />
-          <AllCards songsData={songsData.filter((eachSong) => eachSong.genre.name === 'Pop')} />
+          <AllCards
+            songsData={allSongsData.filter(
+              (eachSong) => eachSong.genre.name === 'Pop',
+            )}
+            onHeartClickHandler={onHeartClickHandler}
+          />
           <GenreDetail genre="rock" />
-          <AllCards songsData={songsData.filter((eachSong) => eachSong.genre.name === 'Rock')} />
+          <AllCards
+            songsData={allSongsData.filter(
+              (eachSong) => eachSong.genre.name === 'Rock',
+            )}
+            onHeartClickHandler={onHeartClickHandler}
+          />
         </div>
       </div>
     );

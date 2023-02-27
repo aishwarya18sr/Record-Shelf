@@ -1,56 +1,50 @@
 /* eslint-disable max-len */
 import PropTypes from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { changeLikesUrl, getLikesUrl } from '../../constants/apiEndpoints';
-import makeRequest from '../../utils/makeRequest/makeRequest';
+import React from 'react';
 import Heart from '../Heart/Heart';
 import './Card.css';
 
 function Card({
-  songId, songName, artistName, imageUrl,
+  songData, onHeartClickHandler,
 }) {
-  const [songsLikes, setLikesData] = useState({});
-
-  useEffect(() => {
-    makeRequest(getLikesUrl(songId)).then((response) => {
-      setLikesData(response.data);
-    });
-  }, []);
-
-  const heartClickHandler = () => {
-    makeRequest(changeLikesUrl(songId), {
-      data: { like: !songsLikes.like },
-    }).then((response) => {
-      setLikesData(response.data);
-    });
-  };
-
-  if (songsLikes !== {}) {
-    return (
-      <div className="cardContainer">
-        <img className="cardImage" src={imageUrl} alt="songImage" />
-        <div className="cardContent">
-          <div className="cardText">
-            <p className="cardSongName">{songName}</p>
-            <p className="cardArtistName">{artistName}</p>
-          </div>
-          <Heart
-            icon="heart"
-            isLiked={songsLikes.like}
-            count={songsLikes.count}
-            onClick={heartClickHandler}
-          />
+  return (
+    <div className="cardContainer">
+      <img className="cardImage" src={songData.imageUrl} alt="songImage" />
+      <div className="cardContent">
+        <div className="cardText">
+          <p className="cardSongName">{songData.name}</p>
+          <p className="cardArtistName">{songData.artist.name}</p>
         </div>
+        <Heart
+          icon="heart"
+          isLiked={songData.likeDetails.like}
+          count={songData.likeDetails.count}
+          onClick={() => { onHeartClickHandler(songData.id, songData.likeDetails.like); }}
+        />
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 Card.propTypes = {
-  songId: PropTypes.string.isRequired,
-  songName: PropTypes.string.isRequired,
-  artistName: PropTypes.string.isRequired,
-  imageUrl: PropTypes.string.isRequired,
+  songData: PropTypes.shape(
+    {
+      id: PropTypes.string,
+      name: PropTypes.string,
+      artist: PropTypes.shape({
+        id: PropTypes.string,
+        name: PropTypes.string,
+      }),
+      imageUrl: PropTypes.string,
+      likeDetails: PropTypes.shape(
+        {
+          count: PropTypes.number,
+          like: PropTypes.bool,
+        },
+      ),
+    },
+  ).isRequired,
+  onHeartClickHandler: PropTypes.func.isRequired,
 };
 
 export default Card;

@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
-import React from 'react';
-import './AllCards.css';
 import PropTypes from 'prop-types';
+import React from 'react';
 import Card from '../Card/Card';
+import './AllCards.css';
 
-function AllCards({ songsData }) {
+function AllCards({ songsData, onHeartClickHandler }) {
   return (
     <div className="allCardsContainer">
-      {(songsData.length !== 0) ? songsData.map((eachSong) => <Card key={eachSong.id} songId={eachSong.id} songName={eachSong.name} artistName={eachSong.artist.name} imageUrl={eachSong.imageUrl} />) : <p />}
+      {(songsData.length !== 0) ? songsData.map((eachSong) => <Card key={eachSong.id} songData={eachSong} onHeartClickHandler={onHeartClickHandler} />) : <p />}
     </div>
   );
 }
@@ -22,8 +22,15 @@ AllCards.propTypes = {
         name: PropTypes.string,
       }),
       imageUrl: PropTypes.string,
+      likeDetails: PropTypes.shape(
+        {
+          count: PropTypes.number,
+          like: PropTypes.bool,
+        },
+      ),
     },
   )).isRequired,
+  onHeartClickHandler: PropTypes.func.isRequired,
 };
 
 export default AllCards;
