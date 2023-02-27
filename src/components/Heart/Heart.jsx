@@ -1,27 +1,20 @@
-import './Heart.css';
-import React from 'react';
 import PropTypes from 'prop-types';
-import heartRed from '../../assets/icons/heart-red.svg';
-import heartGray from '../../assets/icons/heart-gray.svg';
+import React from 'react';
+import Image from '../Image';
+import './Heart.css';
 
 function Heart({ isLiked, count, onClick }) {
-  const getIcon = () => {
-    if (isLiked === true) {
-      return <img className="heartImage" src={heartRed} alt="heartRed" />;
-    }
-    if (isLiked === false) {
-      return <img className="heartImage" src={heartGray} alt="heartGray" />;
-    }
-    return null;
-  };
-
-  const clickHandler = () => {
-    onClick();
-  };
-
   return (
     <div className="heartContainer">
-      <button className="heartIcon" type="submit" onClick={clickHandler}>{getIcon()}</button>
+      <button className="heartIcon" type="submit" onClick={onClick}>
+        <Image
+          imagePath={`icons/heart-${isLiked ? 'red' : 'gray'}`}
+          imageExtension="svg"
+          defaultImagePath="icons/heart-gray"
+          altText={isLiked ? 'Red heart' : 'Gray heart'}
+          className="heartImage"
+        />
+      </button>
       <p className="heartText">{count}</p>
     </div>
   );

@@ -2,27 +2,19 @@
 /* eslint-disable import/no-dynamic-require */
 import PropTypes from 'prop-types';
 import React from 'react';
+import Image from '../Image';
 import './GenreDetail.css';
 
 function GenreDetail({ genre }) {
-  const getImage = () => {
-    let genreImage;
-    try {
-      genreImage = require(`../../assets/images/genre-${genre}.png`);
-    } catch (e) {
-      genreImage = require('../../assets/images/genre-default.png');
-    }
-    return (
-      <img
-        className="genreDetailImage"
-        src={genreImage}
-        alt="genreImage"
-      />
-    );
-  };
   return (
     <div className="genreDetailContainer">
-      {getImage()}
+      <Image
+        imagePath={`images/genre-${genre}`}
+        imageExtension="png"
+        defaultImagePath="images/genre-default"
+        altText={genre}
+        className="genreDetailImage"
+      />
       <p className="genreDetailText">{genre}</p>
     </div>
   );

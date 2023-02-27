@@ -1,27 +1,21 @@
-import './Icon.css';
-import React from 'react';
 import PropTypes from 'prop-types';
-import iconGenre from '../../assets/icons/icon-genre.svg';
-import iconGrid from '../../assets/icons/icon-grid.svg';
+import React from 'react';
+import Image from '../Image';
+import './Icon.css';
 
 function Icon({ icon, onClick }) {
-  const getIcon = () => {
-    if (icon === 'genre') {
-      return <img src={iconGenre} alt="genreIcon" />;
-    }
-    if (icon === 'grid') {
-      return <img src={iconGrid} alt="gridIcon" />;
-    }
-    return null;
-  };
-
-  const clickHandler = () => {
-    onClick();
-  };
-
   return (
     <div className="iconContainer">
-      <button className="commonIcon" type="submit" onClick={clickHandler}>{getIcon()}</button>
+      <button className="commonIcon" type="submit" onClick={onClick}>
+        <Image
+          imagePath={`icons/icon-${icon}`}
+          imageExtension="svg"
+          defaultImagePath="icons/icon-grid"
+          altText={icon}
+          className=""
+        />
+
+      </button>
     </div>
   );
 }
