@@ -6,7 +6,7 @@ import './Icon.css';
 function Icon({ icon, onClickHandler }) {
   return (
     <div className="iconContainer">
-      <button className="commonIcon" type="submit" onClick={onClickHandler}>
+      <button className="commonIcon" type="button" onClick={onClickHandler}>
         <Image
           imagePath={`icons/icon-${icon}`}
           imageExtension="svg"

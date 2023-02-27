@@ -1,12 +1,12 @@
 .iconContainer {
     padding-top: 65px;
-    margin-right: 80px;
+    margin-right: 50px;
 }
 
 .commonIcon {
     width: 40px;
     height: 40px;
-    background-color: #DFDFDF;
+    background-color: #F5F5F5;
     border: 0px;
     cursor: pointer;
 }
