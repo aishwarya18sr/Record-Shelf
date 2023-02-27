@@ -19,7 +19,7 @@ function SongCard({
           icon="heart"
           isLiked={songData.likeDetails.like}
           count={songData.likeDetails.count}
-          onClick={() => { onHeartClickHandler(songData.id, songData.likeDetails.like); }}
+          onClickHandler={() => { onHeartClickHandler(songData.id, songData.likeDetails.like); }}
         />
       </div>
     </div>

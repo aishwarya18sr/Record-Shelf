@@ -3,10 +3,10 @@ import React from 'react';
 import Image from '../Image';
 import './Heart.css';
 
-function Heart({ isLiked, count, onClick }) {
+function Heart({ isLiked, count, onClickHandler }) {
   return (
     <div className="heartContainer">
-      <button className="heartIcon" type="submit" onClick={onClick}>
+      <button className="heartIcon" type="submit" onClick={onClickHandler}>
         <Image
           imagePath={`icons/heart-${isLiked ? 'red' : 'gray'}`}
           imageExtension="svg"
@@ -23,7 +23,7 @@ function Heart({ isLiked, count, onClick }) {
 Heart.propTypes = {
   isLiked: PropTypes.bool.isRequired,
   count: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClickHandler: PropTypes.func.isRequired,
 };
 
 export default Heart;

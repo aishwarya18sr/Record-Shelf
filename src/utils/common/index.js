@@ -1,4 +1,4 @@
-import { getLikesUrl, RECORDS_URL } from '../../constants/apiEndpoints';
+import { GET_LIKES_URL, RECORDS_URL } from '../../constants/apiEndpoints';
 import makeRequest from '../makeRequest/makeRequest';
 
 export const getSongIndexById = (
@@ -31,7 +31,7 @@ export const getAllSongsData = async (setAllSongsData) => {
   const songsDetails = songsResponse.data;
   const allSongsData = songsDetails?.map(async (eachSongDetails) => {
     const updatedSongDetails = { ...eachSongDetails };
-    const likedResponse = await makeRequest(getLikesUrl(eachSongDetails.id));
+    const likedResponse = await makeRequest(GET_LIKES_URL(eachSongDetails.id));
     updatedSongDetails.likeDetails = likedResponse.data;
     return updatedSongDetails;
   });

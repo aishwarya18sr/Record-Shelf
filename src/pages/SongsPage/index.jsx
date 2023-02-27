@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import CategoryTitle from '../../components/CategoryTitle';
 import Icon from '../../components/Icon';
 import AllCards from '../../components/SongCards';
-import { changeLikesUrl } from '../../constants/apiEndpoints';
+import { UPDATE_LIKES_URL } from '../../constants/apiEndpoints';
 import { GENRES_ROUTE } from '../../constants/routes';
 import { getAllSongsData, updateAllSongsData } from '../../utils/common';
 import makeRequest from '../../utils/makeRequest/makeRequest';
@@ -18,13 +18,13 @@ function SongsPage() {
   }, []);
 
   const onHeartClickHandler = async (songId, songLike) => {
-    const updatedLikedResponse = await makeRequest(changeLikesUrl(songId), {
+    const updatedLikedResponse = await makeRequest(UPDATE_LIKES_URL(songId), {
       data: { like: !songLike },
     });
     updateAllSongsData(songId, updatedLikedResponse.data, allSongsData, setAllSongsData);
   };
 
-  const iconClickHandler = () => {
+  const onGenreIconClickHandler = () => {
     navigate(GENRES_ROUTE);
   };
 
@@ -33,7 +33,7 @@ function SongsPage() {
       <div className="songsPageMain">
         <div className="songsPageHeading">
           <CategoryTitle categoryText="all songs" />
-          <Icon icon="genre" onClick={iconClickHandler} />
+          <Icon icon="genre" onClickHandler={onGenreIconClickHandler} />
         </div>
         <AllCards songsData={allSongsData} onHeartClickHandler={onHeartClickHandler} />
       </div>

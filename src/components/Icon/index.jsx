@@ -3,10 +3,10 @@ import React from 'react';
 import Image from '../Image';
 import './Icon.css';
 
-function Icon({ icon, onClick }) {
+function Icon({ icon, onClickHandler }) {
   return (
     <div className="iconContainer">
-      <button className="commonIcon" type="submit" onClick={onClick}>
+      <button className="commonIcon" type="submit" onClick={onClickHandler}>
         <Image
           imagePath={`icons/icon-${icon}`}
           imageExtension="svg"
@@ -22,7 +22,7 @@ function Icon({ icon, onClick }) {
 
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClickHandler: PropTypes.func.isRequired,
 };
 
 export default Icon;

@@ -4,7 +4,7 @@ import CategoryTitle from '../../components/CategoryTitle';
 import GenreDetail from '../../components/GenreDetail';
 import Icon from '../../components/Icon';
 import AllCards from '../../components/SongCards';
-import { changeLikesUrl } from '../../constants/apiEndpoints';
+import { UPDATE_LIKES_URL } from '../../constants/apiEndpoints';
 import { SONGS_ROUTE } from '../../constants/routes';
 import { getAllSongGenreNames, getAllSongsData, updateAllSongsData } from '../../utils/common';
 import makeRequest from '../../utils/makeRequest/makeRequest';
@@ -18,13 +18,13 @@ function GenresPage() {
   }, []);
 
   const onHeartClickHandler = async (songId, songLike) => {
-    const updatedLikedResponse = await makeRequest(changeLikesUrl(songId), {
+    const updatedLikedResponse = await makeRequest(UPDATE_LIKES_URL(songId), {
       data: { like: !songLike },
     });
     updateAllSongsData(songId, updatedLikedResponse.data, allSongsData, setAllSongsData);
   };
 
-  const iconClickHandler = () => {
+  const gridIconClickHandler = () => {
     navigate(SONGS_ROUTE);
   };
 
@@ -33,7 +33,7 @@ function GenresPage() {
       <div className="genresPageMain">
         <div className="genresPageHeading">
           <CategoryTitle categoryText="genres" />
-          <Icon icon="grid" onClick={iconClickHandler} />
+          <Icon icon="grid" onClickHandler={gridIconClickHandler} />
         </div>
         {getAllSongGenreNames(allSongsData).map((eachGenreName) => (
           <div key={eachGenreName}>

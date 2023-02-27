@@ -5,7 +5,7 @@
     background-color: #38497E;
 }
 
-.headerP {
+.recordsHeaderText {
     padding-left: 10px;
     padding-top: 15px;
     margin: 0px;
@@ -13,6 +13,6 @@
     color: #F5F5F5;
 }
 
-.headerSpan {
+.recordsHeaderSpan {
     font-weight: bolder;
 }

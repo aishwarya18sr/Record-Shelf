@@ -4,9 +4,9 @@ import './Header.css';
 function Header() {
   return (
     <header className="recordsHeader">
-      <p className="headerP">
+      <p className="recordsHeaderText">
         My
-        <span className="headerSpan">Record</span>
+        <span className="recordsHeaderSpan">Record</span>
         Shelf
       </p>
     </header>

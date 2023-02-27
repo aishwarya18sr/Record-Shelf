@@ -7,7 +7,7 @@ import './SongCards.css';
 function SongCards({ songsData, onHeartClickHandler }) {
   return (
     <div className="songCardsContainer">
-      {(songsData.length !== 0) ? songsData.map((eachSong) => <SongCard key={eachSong.id} songData={eachSong} onHeartClickHandler={onHeartClickHandler} />) : <p />}
+      {(songsData.length !== 0) && songsData.map((eachSong) => <SongCard key={eachSong.id} songData={eachSong} onHeartClickHandler={onHeartClickHandler} />)}
     </div>
   );
 }

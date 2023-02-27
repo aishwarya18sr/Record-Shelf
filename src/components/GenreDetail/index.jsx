@@ -1,5 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-dynamic-require */
 import PropTypes from 'prop-types';
 import React from 'react';
 import Image from '../Image';

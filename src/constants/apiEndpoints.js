@@ -5,12 +5,12 @@ export const RECORDS_URL = {
   method: 'get',
 };
 
-export const getLikesUrl = (recordId) => ({
+export const GET_LIKES_URL = (recordId) => ({
   url: `api/records/${recordId}/likes`,
   method: 'get',
 });
 
-export const changeLikesUrl = (recordId) => ({
+export const UPDATE_LIKES_URL = (recordId) => ({
   url: `api/records/${recordId}/likes`,
   method: 'patch',
 });
