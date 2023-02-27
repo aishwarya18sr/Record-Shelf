@@ -2,8 +2,12 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { Header } from './components';
-import { GENRES_ROUTE, HOME_ROUTE, SONGS_ROUTE } from './constants/routes';
-import { GenresPage, HomePage, SongsPage } from './pages';
+import {
+  ERROR_ROUTE, GENRES_ROUTE, HOME_ROUTE, SONGS_ROUTE
+} from './constants/routes';
+import {
+  ErrorPage, GenresPage, HomePage, NotFoundPage, SongsPage
+} from './pages';
 
 function App() {
   return (
@@ -24,7 +28,8 @@ function App() {
               path={GENRES_ROUTE}
               element={<GenresPage />}
             />
-            <Route path="*" element={<div>404 Error. Page not found</div>} />
+            <Route path={`${ERROR_ROUTE}/:errorCode?`} element={<ErrorPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </BrowserRouter>
       </div>

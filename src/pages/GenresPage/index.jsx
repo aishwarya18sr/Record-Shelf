@@ -14,12 +14,12 @@ function GenresPage() {
   const [allSongsData, setAllSongsData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    getAllSongsData(setAllSongsData).then();
+    getAllSongsData(setAllSongsData, navigate).then();
   }, []);
 
   const onHeartClickHandler = async (songId, songLike) => {
-    const updatedLikedResponse = await makeRequest(UPDATE_LIKES_URL(songId), {
-      data: { like: !songLike },
+    const updatedLikedResponse = await makeRequest(UPDATE_LIKES_URL(songId), navigate, {
+      data: { like: !songLike }
     });
     updateAllSongsData(songId, updatedLikedResponse.data, allSongsData, setAllSongsData);
   };
@@ -40,7 +40,7 @@ function GenresPage() {
             <GenreDetail genre={eachGenreName.toLowerCase()} />
             <AllCards
               songsData={allSongsData.filter(
-                (eachSong) => eachSong.genre.name === eachGenreName,
+                (eachSong) => eachSong.genre.name === eachGenreName
               )}
               onHeartClickHandler={onHeartClickHandler}
             />

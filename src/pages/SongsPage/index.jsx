@@ -14,12 +14,12 @@ function SongsPage() {
   const [allSongsData, setAllSongsData] = useState([]);
   const navigate = useNavigate();
   useEffect(() => {
-    getAllSongsData(setAllSongsData).then();
+    getAllSongsData(setAllSongsData, navigate).then();
   }, []);
 
   const onHeartClickHandler = async (songId, songLike) => {
-    const updatedLikedResponse = await makeRequest(UPDATE_LIKES_URL(songId), {
-      data: { like: !songLike },
+    const updatedLikedResponse = await makeRequest(UPDATE_LIKES_URL(songId), navigate, {
+      data: { like: !songLike }
     });
     updateAllSongsData(songId, updatedLikedResponse.data, allSongsData, setAllSongsData);
   };
