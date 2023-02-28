@@ -22,6 +22,11 @@
 ![genres page image](./screenshots/GenresPage.png "genres page image")
 
 
-### 3. Not Found Error Page
+### 4. Not Found Error Page
 
 ![not found page image](./screenshots/NotFoundPage.png "not found page image")
+
+
+### 5. Test coverage results
+
+![test coverage results image](./screenshots/TestCoverage.png "test coverage results image")
