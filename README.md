@@ -20,3 +20,7 @@
 
 ![genres page image](./screenshots/GenresPage.png "genres page image")
 
+
+### 3. Not Found Error Page
+
+![not found page image](./screenshots/NotFoundPage.png "not found page image")
