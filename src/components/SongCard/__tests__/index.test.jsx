@@ -5,6 +5,9 @@ import SongCard from '..';
 import { mockSongsDataWithLikes } from '../../../mocks/songsData';
 
 describe('SongCard', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
   const mockOnHeartClickHandler = jest.fn();
   const renderSongCardComponent = () => {
     render(
