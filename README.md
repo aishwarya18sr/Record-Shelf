@@ -3,6 +3,7 @@
 3. Create a authorizationToken.js file using the temp file and appropriate token
 4. `npm run start` - Run the app
 5. `npm run test` - Run the test cases
+6. `npm run test:coverage` - Generate the code coverage test report
 
 
 ## My Record Shelf
