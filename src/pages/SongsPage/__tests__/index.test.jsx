@@ -3,9 +3,11 @@ import {
 } from '@testing-library/react';
 import React from 'react';
 import SongsPage from '..';
+import { UPDATE_LIKES_URL } from '../../../constants/apiEndpoints';
 import { GENRES_ROUTE } from '../../../constants/routes';
-import { mockSongsDataWithLikes } from '../../../mocks/songsData';
+import { mockSongLikeResponse, mockSongsDataWithLikes } from '../../../mocks/songsData';
 import * as commonUtils from '../../../utils/common';
+import makeRequest from '../../../utils/makeRequest';
 
 jest.mock('../../../utils/makeRequest');
 
@@ -35,6 +37,17 @@ describe('SongsPage', () => {
     });
     expect(screen.getByAltText('genre')).toBeTruthy();
     expect(screen.getAllByTestId('song-card')).toHaveLength(2);
+  });
+  it('should call the makeRequest function with appropriate parameters when the heart icon is clicked', async () => {
+    const mockMakeRequest = makeRequest.mockResolvedValue(mockSongLikeResponse);
+    render(<SongsPage />);
+    expect(mockMakeRequest).toHaveBeenCalledTimes(0);
+    await waitFor(() => {
+      expect(screen.getAllByTestId('red-heart-image')[0]).toBeTruthy();
+    });
+    fireEvent.click(screen.getByTestId('red-heart-image'));
+    expect(mockMakeRequest).toHaveBeenCalledTimes(1);
+    expect(mockMakeRequest).toHaveBeenCalledWith(UPDATE_LIKES_URL('mock song id 1'), mockedNavigate, { data: { like: false } });
   });
   it('should navigate to genres page when the genre icon is clicked', async () => {
     render(<SongsPage />);

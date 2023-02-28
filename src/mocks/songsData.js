@@ -65,3 +65,10 @@ export const mockSongsDataWithLikes = [
             like: false
         }
     }];
+
+export const mockSongLikeResponse = {
+    data: {
+        like: true,
+        count: 1
+    }
+};
