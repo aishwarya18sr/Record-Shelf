@@ -8,7 +8,7 @@ function SongCard({
   songData, onHeartClickHandler
 }) {
   return (
-    <div className="cardContainer">
+    <div className="cardContainer" data-testid="song-card">
       <img className="cardImage" src={songData.imageUrl} alt="songImage" />
       <div className="cardContent">
         <div className="cardText">
