@@ -21,7 +21,7 @@
       "<rootDir>/src/constants/authorizationToken.temp.js",
       "<rootDir>/src/components/index.js",
       "<rootDir>/src/pages/index.js",
-      "<rootDir>/index.jsx"
+      "<rootDir>/src/index.jsx"
     ],
     "coverageThreshold": {
       "global": {
