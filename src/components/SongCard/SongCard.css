@@ -5,8 +5,8 @@
     color: black;
     padding: 10px;
     margin: 10px 1px 10px 1px;
-    width: 250px;
-    height: 200px;
+    width: 260px;
+    height: 220px;
     border-radius: 10px;
 }
 
@@ -36,8 +36,8 @@
 
 .cardSongName {
     margin: 0px;
-    font-size: 28px;
-    width: 170px;
+    font-size: 24px;
+    width: 150px;
     font-weight: 100;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -47,7 +47,7 @@
 .cardArtistName {
     margin: 0px;
     font-size: 17px;
-    width: 170px;
+    width: 150px;
     font-weight: bolder;
     text-overflow: ellipsis;
     overflow: hidden;
