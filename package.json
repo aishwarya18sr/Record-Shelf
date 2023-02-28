@@ -24,7 +24,7 @@
       "cobertura"
     ],
     "collectCoverageFrom": [
-      "**/*.{js,jsx}"
+      "*.{js,jsx}"
     ],
     "coveragePathIgnorePatterns": [
       "<rootDir>/node_modules/"

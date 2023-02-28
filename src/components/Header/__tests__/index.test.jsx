@@ -3,9 +3,9 @@ import React from 'react';
 import Header from '..';
 
 describe('Header', () => {
-    it('should show the header text when the component is rendered', () => {
-        render(<Header />);
-        expect(screen.getByTestId('records-header-text')).toBeTruthy();
-    });
+  it('should show the header text when the component is rendered', () => {
+    render(<Header />);
+    expect(screen.getByTestId('records-header-text')).toBeTruthy();
+  });
 });
 
