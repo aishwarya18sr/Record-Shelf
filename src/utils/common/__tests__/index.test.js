@@ -3,9 +3,7 @@ import {
 } from '..';
 import { GET_LIKES_URL, RECORDS_URL } from '../../../constants/apiEndpoints';
 import {
-  mockSongLikeData,
-  mockSongLikeResponse,
-  mockSongsData,
+  mockSongLikeData1, mockSongLikeResponse1, mockSongLikeResponse2, mockSongsData,
   mockSongsDataWithLikes,
   mockSongsDataWithUpdatedLikes
 } from '../../../mocks/songsData';
@@ -24,7 +22,7 @@ describe('updateAllSongsData', () => {
   it('should set the songs data with updated likes data when called with appropriate parameters', () => {
     const mockSetAllSongsData = jest.fn();
     expect(mockSetAllSongsData).toHaveBeenCalledTimes(0);
-    updateAllSongsData('mock song id 2', mockSongLikeData, mockSongsDataWithLikes, mockSetAllSongsData);
+    updateAllSongsData('mock song id 2', mockSongLikeData1, mockSongsDataWithLikes, mockSetAllSongsData);
     expect(mockSetAllSongsData).toHaveBeenCalledTimes(1);
     expect(mockSetAllSongsData).toHaveBeenCalledWith(mockSongsDataWithUpdatedLikes);
   });
@@ -37,7 +35,7 @@ describe('getAllSongsData', () => {
   it('should call the make request function with appropriate parameters when the function is called', async () => {
     const mockMakeRequest = makeRequest.mockResolvedValueOnce(
       { data: mockSongsData }
-    ).mockResolvedValue(mockSongLikeResponse);
+    ).mockResolvedValue(mockSongLikeResponse1);
     const mockNavigate = jest.fn();
     expect(mockMakeRequest).toBeCalledTimes(0);
     await getAllSongsData(mockNavigate);
@@ -49,6 +47,17 @@ describe('getAllSongsData', () => {
     expect(mockMakeRequest).toHaveBeenNthCalledWith(3, GET_LIKES_URL(
       mockSongsData[1].id
     ), mockNavigate);
+  });
+  it('should send the promises of all songs data when the function is called', async () => {
+    makeRequest.mockResolvedValueOnce(
+      { data: mockSongsData }
+    ).mockResolvedValueOnce(mockSongLikeResponse1).mockResolvedValueOnce(mockSongLikeResponse2);
+    const mockNavigate = jest.fn();
+    getAllSongsData(mockNavigate).then((allSongDetailsResponse) => {
+      Promise.all(allSongDetailsResponse).then((allSongDetails) => {
+        expect(allSongDetails).toStrictEqual(mockSongsDataWithLikes);
+      });
+    });
   });
 });
 

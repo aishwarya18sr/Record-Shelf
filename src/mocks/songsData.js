@@ -18,7 +18,7 @@ export const mockSongsData = [
         name: 'mock title 2',
         genre: {
             id: 'mock genre id 2',
-            name: 'mock genre name 1'
+            name: 'mock genre name 2'
         },
         artist: {
             id: 'mock artist id 2',
@@ -104,11 +104,20 @@ export const mockSongsDataWithUpdatedLikes = [
         }
     }];
 
-export const mockSongLikeData = {
+export const mockSongLikeData1 = {
     like: true,
     count: 1
 };
 
-export const mockSongLikeResponse = {
-    data: mockSongLikeData
+export const mockSongLikeData2 = {
+    like: false,
+    count: 2
+};
+
+export const mockSongLikeResponse1 = {
+    data: mockSongLikeData1
+};
+
+export const mockSongLikeResponse2 = {
+    data: mockSongLikeData2
 };

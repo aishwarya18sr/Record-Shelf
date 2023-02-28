@@ -5,7 +5,7 @@ import React from 'react';
 import SongsPage from '..';
 import { UPDATE_LIKES_URL } from '../../../constants/apiEndpoints';
 import { GENRES_ROUTE } from '../../../constants/routes';
-import { mockSongLikeResponse, mockSongsDataWithLikes } from '../../../mocks/songsData';
+import { mockSongLikeResponse1, mockSongsDataWithLikes } from '../../../mocks/songsData';
 import * as commonUtils from '../../../utils/common';
 import makeRequest from '../../../utils/makeRequest';
 
@@ -39,7 +39,7 @@ describe('SongsPage', () => {
     expect(screen.getAllByTestId('song-card')).toHaveLength(2);
   });
   it('should call the makeRequest function with appropriate parameters when the heart icon is clicked', async () => {
-    const mockMakeRequest = makeRequest.mockResolvedValue(mockSongLikeResponse);
+    const mockMakeRequest = makeRequest.mockResolvedValue(mockSongLikeResponse1);
     render(<SongsPage />);
     expect(mockMakeRequest).toHaveBeenCalledTimes(0);
     await waitFor(() => {
