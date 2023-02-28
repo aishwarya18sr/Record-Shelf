@@ -13,7 +13,13 @@ function SongsPage() {
   const [allSongsData, setAllSongsData] = useState();
   const navigate = useNavigate();
   useEffect(() => {
-    getAllSongsData(setAllSongsData, navigate).then();
+    getAllSongsData(navigate).then(
+      (allSongDetailsResponse) => {
+        Promise.all(allSongDetailsResponse).then((allSongDetails) => {
+          setAllSongsData(allSongDetails);
+        });
+      }
+    );
   }, []);
 
   const onHeartClickHandler = async (songId, songLike) => {

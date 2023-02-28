@@ -26,17 +26,14 @@ export const updateAllSongsData = (
   ]);
 };
 
-export const getAllSongsData = async (setAllSongsData, navigate) => {
+export const getAllSongsData = async (navigate) => {
   const songsResponse = await makeRequest(RECORDS_URL, navigate);
   const songsDetails = songsResponse.data;
-  const allSongsData = songsDetails?.map(async (eachSongDetails) => {
+  return songsDetails?.map(async (eachSongDetails) => {
     const updatedSongDetails = { ...eachSongDetails };
     const likedResponse = await makeRequest(GET_LIKES_URL(eachSongDetails.id), navigate);
     updatedSongDetails.likeDetails = likedResponse.data;
     return updatedSongDetails;
-  });
-  Promise.all(allSongsData).then((allSongDetails) => {
-    setAllSongsData(allSongDetails);
   });
 };
 
