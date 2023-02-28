@@ -6,7 +6,7 @@ import './Heart.css';
 function Heart({ isLiked, count, onClickHandler }) {
   return (
     <div className="heartContainer">
-      <button className="heartIcon" type="button" onClick={onClickHandler}>
+      <button className="heartIcon" type="button" onClick={onClickHandler} data-testid="heart-button">
         <Image
           imagePath={`icons/heart-${isLiked ? 'red' : 'gray'}`}
           imageExtension="svg"
