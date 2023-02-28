@@ -6,8 +6,8 @@ function ErrorPage() {
   const { errorCode } = useParams();
   return (
     <div className="errorContainer">
-      <p>Something went wrong!</p>
-      {errorCode && <p>{`Error code: ${errorCode}`}</p>}
+      <p className="errorText">Something went wrong!</p>
+      {errorCode && <p className="errorText">{`Error code: ${errorCode}`}</p>}
     </div>
   );
 }
