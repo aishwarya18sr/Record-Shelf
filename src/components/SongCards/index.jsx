@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import PropTypes from 'prop-types';
 import React from 'react';
 import SongCard from '../SongCard';
@@ -7,7 +6,15 @@ import './SongCards.css';
 function SongCards({ songsData, onHeartClickHandler }) {
   return (
     <div className="songCardsContainer">
-      {(songsData.length !== 0) && songsData.map((eachSong) => <SongCard key={eachSong.id} songData={eachSong} onHeartClickHandler={onHeartClickHandler} />)}
+      {(songsData.length !== 0) && songsData.map(
+        (eachSong) => (
+          <SongCard
+            key={eachSong.id}
+            songData={eachSong}
+            onHeartClickHandler={onHeartClickHandler}
+          />
+        )
+      )}
     </div>
   );
 }

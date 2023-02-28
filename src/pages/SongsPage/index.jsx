@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CategoryTitle from '../../components/CategoryTitle';
